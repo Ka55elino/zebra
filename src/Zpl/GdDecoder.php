@@ -21,7 +21,7 @@ class GdDecoder implements Decoder
      */
     public function __construct($image)
     {
-        if (!$this->isGdResource($image)) {
+        if (!$this->isGdResource($image) && !($image instanceof \GdImage)) {
             throw new InvalidArgumentException('Invalid resource');
         }
 
